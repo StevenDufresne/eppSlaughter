@@ -1,0 +1,43 @@
+<div class="slaughter cf">
+  <h1 class="no-margin-t">Sargeant EPP Slaughter</h1>
+  <div class="left domain  c-container">
+    <h3 class="no-margin-t">Contact Details</h3>
+    <form id="contact-form" action="">
+
+      <div class="block" ng-repeat= "item in contactDetails">
+        <label for="{{item.id}}">{{item.label}}</label>
+        <input id="{{item.id}}" class="good" type="text" value="{{item.currentValue}}"  ng-keyUp="onChange()">
+      </div> 
+
+      <button class="js-begin" ng-click="updateSection('contact-form', contactDetails)">Update</button>
+      <button  class="js-begin" ng-click="resetSection('contact-form', contactDetails)">Reset</button>
+    </form>
+   
+  </div>
+  <div class="left contact margin-left c-container">
+    <h3 class="no-margin-t">Domain Details</h3>
+    <form id="domain-form" action="">
+
+      <div class="block" ng-repeat= "item in domainDetails">
+        <label for="{{item.id}}">{{item.label}}</label>
+        <input id="{{item.id}}" class="good" type="text" value="{{item.currentValue}}" ng-keyUp="onChange()">
+      </div> 
+
+      <button class="js-begin" ng-click="updateSection('domain-form',domainDetails)">Update</button>
+      <button  class="js-begin" ng-click="resetSection('domain-form', domainDetails)">Reset</button>
+    </form>
+  </div>
+</div>
+
+<div class="tests">
+<select ng-options="item as item for item in eppTests" 
+   ng-model="item" ng-change="showEPP()"></select>
+
+
+      <div id="codeContent">
+        <pre class="prettyprint js-pretty">
+
+        </pre>
+      </div>
+
+</div>
