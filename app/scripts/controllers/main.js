@@ -122,12 +122,15 @@ var app = angular.module('eppTestKillerApp')
     "domain delete",
     "domain info",
     "domain info auth",
-   "domain renew",
-   "domain transfer",
-   "domain transfer query",
-   "domain update host attr",
-   "domain update host attr"
-
+    "domain renew",
+    "domain transfer",
+    "domain transfer query",
+    "domain update host attr",
+    "domain update host obj",
+    "host check",
+    "host create",
+    "host delete",
+    "host update"
   	];
 
   	$scope.updateSection = function (formId, scopeObject) {
@@ -177,6 +180,11 @@ var app = angular.module('eppTestKillerApp')
       }
     }
 
+    $scope.selectXML = function () {
+      var copy = $(".js-pretty").select();
+
+      console.log(copy);
+    }
 
   	function updateInputStyle(obj)  {
   		obj.classList.add("good");
@@ -210,6 +218,8 @@ var app = angular.module('eppTestKillerApp')
 
         return returnedFrag
       }
+
+
 
 
   })

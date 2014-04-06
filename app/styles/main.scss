@@ -151,10 +151,12 @@ input.changed {
     overflow-y: scroll;
 }
 
-pre.prettyprint {
+textarea.prettyprint {
     border: none !important;
     background: #eee;
     padding-bottom: 20px !important;
+    width: 100%;
+    min-height: 400px;
 }
 .hidden {
     display: none;
