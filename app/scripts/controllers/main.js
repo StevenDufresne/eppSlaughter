@@ -125,6 +125,8 @@ var app = angular.module('eppTestKillerApp')
     "domain renew",
     "domain transfer",
     "domain transfer query",
+    "domain create host attr",
+    "domain create host obj",
     "domain update host attr",
     "domain update host obj",
     "host check",
@@ -174,6 +176,8 @@ var app = angular.module('eppTestKillerApp')
 
       var returned = returnEPPXML($scope.item.replace(/ /gi, "_"));
 
+      console.log(returned);
+
       if(returned.length >1 ) {
         var replaced = replaceTemplateItems(returned);
         itemContent.text(replaced);
@@ -195,13 +199,13 @@ var app = angular.module('eppTestKillerApp')
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "xml/" + eppAction + ".xml", false);
         xhttp.send();
-        var xmlDoc = xhttp.responseXML;
+        var xmlText = new XMLSerializer().serializeToString(xhttp.responseXML);
 
-        if(xmlDoc.length > 1) {
-          return "";
-        } else {
-           return xmlDoc.firstElementChild.innerHTML;
-        } 
+        console.log(xmlText);
+
+
+        return xmlText;
+ 
 
       }
 
